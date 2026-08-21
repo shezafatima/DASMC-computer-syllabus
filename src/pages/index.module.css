@@ -1,0 +1,77 @@
+.heroBanner {
+  padding: 4.5rem 1.5rem 3.5rem;
+  text-align: center;
+  background: linear-gradient(150deg, var(--dfs-navy) 0%, var(--dfs-navy-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 242, 18, 0.16), transparent 45%);
+  pointer-events: none;
+}
+
+.heroLogo {
+  height: 64px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  color: var(--dfs-yellow);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.heroBlurb {
+  color: #e6e6ff;
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.sectionAlt {
+  background: var(--ifm-background-surface-color);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.sectionLead {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+}

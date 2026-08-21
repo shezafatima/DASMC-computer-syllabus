@@ -1,0 +1,51 @@
+.callout {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--dfs-border);
+  background: var(--ifm-background-surface-color);
+}
+
+.mini {
+  border-left: 5px solid var(--dfs-navy);
+}
+
+.final {
+  border-left: 5px solid var(--dfs-yellow-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.mini .header {
+  background: var(--dfs-navy);
+  color: #ffffff;
+}
+
+.final .header {
+  background: var(--dfs-yellow);
+  color: var(--dfs-navy);
+}
+
+.icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.body {
+  padding: 0.9rem 1.15rem 1.1rem 1.15rem;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+.body ul {
+  margin-bottom: 0;
+}

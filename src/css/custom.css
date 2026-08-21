@@ -1,0 +1,190 @@
+/**
+ * Dar-e-Arqam Metrville Campus — Digital & Future Skills Program
+ * Brand theme: Navy Blue + Yellow (from campus logo), Poppins typeface.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand palette sourced from the campus logo */
+  --dfs-navy: #121291;
+  --dfs-navy-light: #23239e;
+  --dfs-navy-dark: #0b0b5e;
+  --dfs-yellow: #fff212;
+  --dfs-yellow-dark: #e6d900;
+  --dfs-border: #e3e3f5;
+
+  --ifm-color-primary: #121291;
+  --ifm-color-primary-dark: #101082;
+  --ifm-color-primary-darker: #0f0f7a;
+  --ifm-color-primary-darkest: #0c0c65;
+  --ifm-color-primary-light: #14149f;
+  --ifm-color-primary-lighter: #1515a8;
+  --ifm-color-primary-lightest: #1919c2;
+
+  --ifm-font-family-base: 'Poppins', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-bold: 600;
+
+  --ifm-code-font-size: 92%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 242, 18, 0.35);
+
+  --ifm-navbar-shadow: 0 1px 3px rgba(18, 18, 145, 0.08);
+  --ifm-link-color: var(--dfs-navy);
+
+  --ifm-menu-color-active: var(--dfs-navy);
+  --ifm-toc-link-color: var(--ifm-color-emphasis-700);
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #7d7dff;
+  --ifm-color-primary-dark: #5c5cff;
+  --ifm-color-primary-darker: #4b4bff;
+  --ifm-color-primary-darkest: #1717ff;
+  --ifm-color-primary-light: #9e9eff;
+  --ifm-color-primary-lighter: #afafff;
+  --ifm-color-primary-lightest: #e0e0ff;
+
+  --dfs-border: #2c2c55;
+  --ifm-link-color: #a7a7ff;
+  --ifm-background-color: #0d0d2b;
+  --ifm-background-surface-color: #14143f;
+  --ifm-menu-color-active: var(--dfs-yellow);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 242, 18, 0.15);
+}
+
+/* Navbar branding */
+.navbar {
+  background: var(--dfs-navy);
+}
+
+html[data-theme='dark'] .navbar {
+  background: #0d0d2b;
+  border-bottom: 1px solid var(--dfs-border);
+}
+
+.navbar__title,
+.navbar__link {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--dfs-yellow) !important;
+}
+
+.navbar__logo img {
+  height: 2.1rem;
+}
+
+.navbar__toggle {
+  color: #ffffff;
+}
+
+.navbar-sidebar__brand {
+  background: var(--dfs-navy);
+}
+
+/* Footer */
+.footer--dark {
+  background: var(--dfs-navy-dark);
+}
+
+.footer__title {
+  color: var(--dfs-yellow);
+}
+
+.footer__link-item {
+  color: #e5e5ff;
+}
+
+.footer__link-item:hover {
+  color: var(--dfs-yellow);
+}
+
+.footer__copyright {
+  color: #c9c9f0;
+}
+
+/* Sidebar active item accent */
+.menu__link--active:not(.menu__link--sublist) {
+  font-weight: 600;
+  border-left: 3px solid var(--dfs-navy);
+}
+
+html[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid var(--dfs-yellow);
+}
+
+.menu__list-item-collapsible:hover {
+  background: rgba(18, 18, 145, 0.06);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--dfs-navy);
+}
+
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
+html[data-theme='dark'] h4 {
+  color: #f2f2ff;
+}
+
+h3 {
+  border-bottom: 2px solid var(--dfs-border);
+  padding-bottom: 0.35rem;
+  margin-top: 2.2rem;
+}
+
+/* Tables (Theme Overview / Curriculum Map) */
+table {
+  display: table;
+  width: 100%;
+}
+
+table thead tr {
+  background: var(--dfs-navy);
+}
+
+table thead th {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba(18, 18, 145, 0.04);
+}
+
+html[data-theme='dark'] table tbody tr:nth-child(even) {
+  background: rgba(255, 242, 18, 0.04);
+}
+
+/* Buttons on homepage */
+.button--primary {
+  background: var(--dfs-navy);
+  border-color: var(--dfs-navy);
+}
+
+.button--primary:hover {
+  background: var(--dfs-navy-light);
+}
+
+.button--secondary {
+  background: var(--dfs-yellow);
+  border-color: var(--dfs-yellow);
+  color: var(--dfs-navy);
+  font-weight: 600;
+}
+
+.button--secondary:hover {
+  background: var(--dfs-yellow-dark);
+  color: var(--dfs-navy);
+}
+
+.theme-doc-markdown > h1:first-child {
+  margin-top: 0;
+}
