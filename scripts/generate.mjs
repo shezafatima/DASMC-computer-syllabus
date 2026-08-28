@@ -153,6 +153,26 @@ ${sectionLinks}
 
     const summaryList = section.items.map((i) => `- **${i.topic}**`).join('\n');
 
+    let diagramContent = '';
+    if (section.diagram) {
+      diagramContent = `
+\`\`\`mermaid
+${section.diagram.mermaid}
+\`\`\`
+*${section.diagram.caption}*
+`;
+    }
+    
+    const conceptTopics = section.items.filter(i => i.type === 'concept');
+    let flashcardsContent = '';
+    if (conceptTopics.length > 0) {
+      const cardsObj = conceptTopics.map(c => ({
+        front: c.topic,
+        back: c.definition.split('.')[0] + '.' // Trim to first sentence
+      }));
+      flashcardsContent = `## Review\n\n<FlashcardDeck cards={${JSON.stringify(cardsObj)}} />`;
+    }
+
     const details = section.items
       .map((i) => {
         if (i.type === 'concept') {
@@ -160,12 +180,17 @@ ${sectionLinks}
 
 **Concept:** ${i.definition}
 
-**Example:** ${i.example}`;
-        } else if (i.type === 'steps') {
-          const stepsList = i.steps.map((step, sIdx) => `${sIdx + 1}. ${step}`).join('\n');
+**Example:** ${i.example}
+
+${i.whyItMatters ? `**Why it matters:** ${i.whyItMatters}\n\n` : ''}${i.funFactOrMisconception ? `**Did you know?** ${i.funFactOrMisconception}` : ''}`;
+  } else if (i.type === 'steps') {
+          const stepsList = i.steps.map((step, sIdx) => {
+            if (typeof step === 'string') return `${sIdx + 1}. ${step}`;
+            return `${sIdx + 1}. **${step.action}** ${step.detail}`;
+          }).join('\n');
           return `### ⚙️ ${i.topic}
 
-${stepsList}`;
+${i.intro ? `*${i.intro}*\n\n` : ''}${stepsList}${i.tip ? `\n\n💡 **Tip:** ${i.tip}` : ''}`;
         } else {
           return `### ${i}`;
         }
@@ -178,6 +203,8 @@ ${stepsList}`;
 
 *Grade ${grade.number} — ${grade.title}*
 
+${diagramContent}
+
 Topics covered this grade:
 
 ${summaryList}
@@ -185,6 +212,8 @@ ${summaryList}
 ---
 
 ${details}
+
+${flashcardsContent}
 `;
     write(path.join(base, `${slugify(section.title)}.mdx`), content);
   });
