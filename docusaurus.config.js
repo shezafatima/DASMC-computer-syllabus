@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Digital & Future Skills Program',
-  tagline: 'Practical • Creative • Computational • AI-Aware — Dar-e-Arqam Metrville Campus',
+  tagline: 'Practical • Creative • Computational • AI-Aware — Dar-e-Arqam Metroville Campus',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -14,7 +14,7 @@ const config = {
   url: 'https://digital-future-skills.example.com',
   baseUrl: '/',
 
-  organizationName: 'dar-e-arqam-metrville',
+  organizationName: 'dar-e-arqam-metroville',
   projectName: 'digital-future-skills-syllabus',
 
   onBrokenLinks: 'throw',
@@ -63,7 +63,7 @@ const config = {
       navbar: {
         title: 'Digital & Future Skills',
         logo: {
-          alt: 'Dar-e-Arqam Metrville Campus Logo',
+          alt: 'Dar-e-Arqam Metroville Campus Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -108,7 +108,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Dar-e-Arqam Metrville Campus — Digital & Future Skills Program.`,
+        copyright: `© ${new Date().getFullYear()} Dar-e-Arqam Metroville Campus — Digital & Future Skills Program.`,
       },
       prism: {
         theme: prismThemes.github,

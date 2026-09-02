@@ -30,7 +30,7 @@ function HomepageHeader() {
   return (
     <header className={styles.heroBanner}>
       <div className="container">
-        <img src="/img/logo.svg" alt="Dar-e-Arqam Metrville Campus" className={styles.heroLogo} />
+        <img src="/img/logo.svg" alt="Dar-e-Arqam Metroville Campus" className={styles.heroLogo} />
         <h1 className={styles.heroTitle}>Digital &amp; Future Skills Program</h1>
         <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
         <p className={styles.heroBlurb}>
